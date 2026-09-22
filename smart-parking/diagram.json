@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "ChatGPT - He thong bai do xe thong minh",
+  "editor": "wokwi",
+  "parts": [
+    {"type":"board-st-nucleo-c031c6","id":"nucleo","top":170,"left":-520,"attrs":{}},
+    {"type":"wokwi-pushbutton","id":"ir1","top":-160,"left":-240,"attrs":{"color":"red","label":"IR1 - SLOT 1","key":"1"}},
+    {"type":"wokwi-pushbutton","id":"ir2","top":-160,"left":-20,"attrs":{"color":"red","label":"IR2 - SLOT 2","key":"2"}},
+    {"type":"wokwi-pushbutton","id":"ir3","top":-160,"left":200,"attrs":{"color":"red","label":"IR3 - SLOT 3","key":"3"}},
+    {"type":"wokwi-led","id":"led1","top":-70,"left":-190,"attrs":{"color":"red","label":"SLOT 1"}},
+    {"type":"wokwi-resistor","id":"r1","top":-10,"left":-190,"attrs":{"value":"220"}},
+    {"type":"wokwi-led","id":"led2","top":-70,"left":30,"attrs":{"color":"red","label":"SLOT 2"}},
+    {"type":"wokwi-resistor","id":"r2","top":-10,"left":30,"attrs":{"value":"220"}},
+    {"type":"wokwi-led","id":"led3","top":-70,"left":250,"attrs":{"color":"red","label":"SLOT 3"}},
+    {"type":"wokwi-resistor","id":"r3","top":-10,"left":250,"attrs":{"value":"220"}},
+    {"type":"wokwi-hc-sr04","id":"us1","top":70,"left":-120,"attrs":{"label":"ULTRASONIC ENTRY"}},
+    {"type":"wokwi-hc-sr04","id":"us2","top":70,"left":200,"attrs":{"label":"ULTRASONIC EXIT"}},
+    {"type":"wokwi-servo","id":"servo1","top":245,"left":-80,"attrs":{"horn":"single","label":"ENTRY GATE"}},
+    {"type":"wokwi-servo","id":"servo2","top":245,"left":280,"attrs":{"horn":"single","label":"EXIT GATE"}},
+    {"type":"wokwi-lcd1602","id":"lcd1","top":390,"left":-50,"attrs":{}}
+  ],
+  "connections": [
+    ["ir1:1","nucleo:D2","green",[]],["ir1:2","nucleo:GND.1","black",[]],
+    ["ir2:1","nucleo:D3","green",[]],["ir2:2","nucleo:GND.2","black",[]],
+    ["ir3:1","nucleo:D4","green",[]],["ir3:2","nucleo:GND.3","black",[]],
+    ["led1:A","r1:1","green",[]],["r1:2","nucleo:PC6","green",[]],["led1:C","nucleo:GND.4","black",[]],
+    ["led2:A","r2:1","green",[]],["r2:2","nucleo:PA6","green",[]],["led2:C","nucleo:GND.5","black",[]],
+    ["led3:A","r3:1","green",[]],["r3:2","nucleo:PA7","green",[]],["led3:C","nucleo:GND.6","black",[]],
+    ["us1:VCC","nucleo:5V.1","red",[]],["us1:GND","nucleo:GND.7","black",[]],
+    ["us1:TRIG","nucleo:D5","green",[]],["us1:ECHO","nucleo:D6","orange",[]],
+    ["us2:VCC","nucleo:5V.2","red",[]],["us2:GND","nucleo:GND.8","black",[]],
+    ["us2:TRIG","nucleo:D7","green",[]],["us2:ECHO","nucleo:D8","orange",[]],
+    ["servo1:V+","nucleo:5V.3","red",[]],["servo1:GND","nucleo:GND.9","black",[]],["servo1:PWM","nucleo:D9","green",[]],
+    ["servo2:V+","nucleo:5V.4","red",[]],["servo2:GND","nucleo:GND.10","black",[]],["servo2:PWM","nucleo:D10","green",[]],
+    ["lcd1:VSS","nucleo:GND.11","black",[]],["lcd1:VDD","nucleo:5V.5","red",[]],
+    ["lcd1:RW","nucleo:GND.12","black",[]],["lcd1:RS","nucleo:D11","green",[]],["lcd1:E","nucleo:D12","green",[]],
+    ["lcd1:D4","nucleo:PA0","green",[]],["lcd1:D5","nucleo:PA1","green",[]],["lcd1:D6","nucleo:PA4","green",[]],["lcd1:D7","nucleo:PB0","green",[]],
+    ["lcd1:A","nucleo:5V.6","red",[]],["lcd1:K","nucleo:GND.13","black",[]]
+  ]
+}

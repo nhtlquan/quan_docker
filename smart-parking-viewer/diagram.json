@@ -1,0 +1,431 @@
+{
+  "version": 1,
+  "author": "ChatGPT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-st-nucleo-c031c6",
+      "id": "nucleo",
+      "top": 40,
+      "left": 20,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-breadboard",
+      "id": "bb1",
+      "top": -10,
+      "left": 410,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "sensor1",
+      "top": 35,
+      "left": 450,
+      "rotate": 90,
+      "attrs": {
+        "lux": "500",
+        "threshold": "2.5"
+      }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "sensor2",
+      "top": 35,
+      "left": 620,
+      "rotate": 90,
+      "attrs": {
+        "lux": "500",
+        "threshold": "2.5"
+      }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "sensor3",
+      "top": 35,
+      "left": 790,
+      "rotate": 90,
+      "attrs": {
+        "lux": "500",
+        "threshold": "2.5"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 125,
+      "left": 465,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "res1",
+      "top": 165,
+      "left": 463,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 125,
+      "left": 635,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "res2",
+      "top": 165,
+      "left": 633,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 125,
+      "left": 805,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "res3",
+      "top": 165,
+      "left": 803,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultraIn",
+      "top": 270,
+      "left": 495,
+      "attrs": {
+        "distance": "100"
+      }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultraOut",
+      "top": 270,
+      "left": 700,
+      "attrs": {
+        "distance": "100"
+      }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servoIn",
+      "top": 390,
+      "left": 475,
+      "attrs": {
+        "horn": "single"
+      }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servoOut",
+      "top": 390,
+      "left": 750,
+      "rotate": 180,
+      "attrs": {
+        "horn": "single"
+      }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": 500,
+      "left": 565,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "sensor1:VCC",
+      "nucleo:5V",
+      "red",
+      []
+    ],
+    [
+      "sensor1:GND",
+      "nucleo:GND.1",
+      "black",
+      []
+    ],
+    [
+      "sensor1:DO",
+      "nucleo:PC6",
+      "green",
+      []
+    ],
+    [
+      "sensor2:VCC",
+      "sensor1:VCC",
+      "red",
+      []
+    ],
+    [
+      "sensor2:GND",
+      "sensor1:GND",
+      "black",
+      []
+    ],
+    [
+      "sensor2:DO",
+      "nucleo:PC7",
+      "green",
+      []
+    ],
+    [
+      "sensor3:VCC",
+      "sensor2:VCC",
+      "red",
+      []
+    ],
+    [
+      "sensor3:GND",
+      "sensor2:GND",
+      "black",
+      []
+    ],
+    [
+      "sensor3:DO",
+      "nucleo:PC8",
+      "green",
+      []
+    ],
+    [
+      "res1:1",
+      "nucleo:PB0",
+      "green",
+      []
+    ],
+    [
+      "res1:2",
+      "led1:A",
+      "green",
+      []
+    ],
+    [
+      "led1:C",
+      "nucleo:GND.2",
+      "black",
+      []
+    ],
+    [
+      "res2:1",
+      "nucleo:PB1",
+      "green",
+      []
+    ],
+    [
+      "res2:2",
+      "led2:A",
+      "green",
+      []
+    ],
+    [
+      "led2:C",
+      "nucleo:GND.3",
+      "black",
+      []
+    ],
+    [
+      "res3:1",
+      "nucleo:PB2",
+      "green",
+      []
+    ],
+    [
+      "res3:2",
+      "led3:A",
+      "green",
+      []
+    ],
+    [
+      "led3:C",
+      "nucleo:GND.4",
+      "black",
+      []
+    ],
+    [
+      "ultraIn:VCC",
+      "nucleo:5V",
+      "red",
+      []
+    ],
+    [
+      "ultraIn:GND",
+      "nucleo:GND.5",
+      "black",
+      []
+    ],
+    [
+      "ultraIn:TRIG",
+      "nucleo:D2",
+      "green",
+      []
+    ],
+    [
+      "ultraIn:ECHO",
+      "nucleo:D3",
+      "orange",
+      []
+    ],
+    [
+      "ultraOut:VCC",
+      "nucleo:5V",
+      "red",
+      []
+    ],
+    [
+      "ultraOut:GND",
+      "nucleo:GND.6",
+      "black",
+      []
+    ],
+    [
+      "ultraOut:TRIG",
+      "nucleo:D4",
+      "green",
+      []
+    ],
+    [
+      "ultraOut:ECHO",
+      "nucleo:D5",
+      "orange",
+      []
+    ],
+    [
+      "servoIn:V+",
+      "nucleo:5V",
+      "red",
+      []
+    ],
+    [
+      "servoIn:GND",
+      "nucleo:GND.7",
+      "black",
+      []
+    ],
+    [
+      "servoIn:PWM",
+      "nucleo:PA8",
+      "green",
+      []
+    ],
+    [
+      "servoOut:V+",
+      "nucleo:5V",
+      "red",
+      []
+    ],
+    [
+      "servoOut:GND",
+      "nucleo:GND.8",
+      "black",
+      []
+    ],
+    [
+      "servoOut:PWM",
+      "nucleo:PB8",
+      "green",
+      []
+    ],
+    [
+      "lcd:VSS",
+      "nucleo:GND.9",
+      "black",
+      []
+    ],
+    [
+      "lcd:VDD",
+      "nucleo:5V",
+      "red",
+      []
+    ],
+    [
+      "lcd:RW",
+      "nucleo:GND.10",
+      "black",
+      []
+    ],
+    [
+      "lcd:RS",
+      "nucleo:PA6",
+      "green",
+      []
+    ],
+    [
+      "lcd:E",
+      "nucleo:PA7",
+      "green",
+      []
+    ],
+    [
+      "lcd:D4",
+      "nucleo:PB10",
+      "green",
+      []
+    ],
+    [
+      "lcd:D5",
+      "nucleo:PB4",
+      "green",
+      []
+    ],
+    [
+      "lcd:D6",
+      "nucleo:PB5",
+      "green",
+      []
+    ],
+    [
+      "lcd:D7",
+      "nucleo:PA5",
+      "green",
+      []
+    ],
+    [
+      "lcd:A",
+      "nucleo:5V",
+      "red",
+      []
+    ],
+    [
+      "lcd:K",
+      "nucleo:GND.11",
+      "black",
+      []
+    ],
+    [
+      "sensor1:AO",
+      "nucleo:A0",
+      "purple",
+      []
+    ],
+    [
+      "sensor2:AO",
+      "nucleo:A1",
+      "purple",
+      []
+    ],
+    [
+      "sensor3:AO",
+      "nucleo:A2",
+      "purple",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
